@@ -21,6 +21,6 @@ pipelines:
             - echo "Executing LHCI in container for Conan"
           onExecute:
             - cd $res_conan_lh_resourcePath/
-            - lhci autorun
+            - lhci autorun --config="./lhci-conan.json" --collect.url="https://conan.io/center/"
           onComplete:
             - add_run_files .lighthouseci lhci_report
